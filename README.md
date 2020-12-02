@@ -1,3 +1,45 @@
+How to install this project?.
+
+- Open with your console/terminal
+- Clone this repositories
+- Composer install
+- Create database at your server / local server
+- Change .env according to your database configuration
+- Run php artisan migrate 
+
+How to test?
+
+- Open postman
+- Run project at port 8000 at your console/terminal, php -S localhost:8000 -t public
+- To create data customer:
+    - at postman with method POST and Request URL localhost:8000/create_customer
+    - in the body fill with raw json type for the parameters
+    {
+        "name": "Novel Lagi",
+        "email": "novellagi@gmail.com",
+        "password": "password123",
+        "gender": "P",
+        "is_married": "Yes",
+        "address": "Jalan jalan sore yu"
+    }
+- To show data customer:
+    - at postman with method GET and Request URL localhost:8000/show_all_customer
+- To show detail data customer:
+    - at postman with method GET and Request URL localhost:8000/show_detail_customer/{id}
+- To update data customer:
+    - - at postman with method PUT and Request URL localhost:8000/update_customer/{id}
+    - in the body fill with raw json type for the parameters
+    {
+        "name": "Novel Lagi",
+        "email": "novellagi@gmail.com",
+        "password": "password123",
+        "gender": "P",
+        "is_married": "Yes",
+        "address": "Jalan jalan sore yu"
+    }
+- To delete data customer
+    - at postman with method DELETE and Request URL localhost:8000/delete_customer/{id}
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
