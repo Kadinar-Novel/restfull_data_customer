@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -23,9 +22,6 @@ class CustomerController extends Controller
         $this->validate($request, [
             'email' => 'required|email|unique:customer',
             'name' => 'required'
-        ]);
-        $request->merge([
-            'password' => Hash::make($request->password)
         ]);
         $create = new Customer($request->all());
         $result = $create->save();
@@ -100,9 +96,6 @@ class CustomerController extends Controller
         $this->validate($request, [
             'email' => 'required|email',
             'name' => 'required'
-        ]);
-        $request->merge([
-            'password' => Hash::make($request->password)
         ]);
         $update = $data->update($request->all());
 

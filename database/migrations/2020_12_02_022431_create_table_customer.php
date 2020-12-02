@@ -19,7 +19,7 @@ class CreateTableCustomer extends Migration
             $table->string('email');
             $table->string('password');
             $table->char('gender',1);
-            $table->char('is_married',3);
+            $table->varchar('is_married',50);
             $table->text('address');
             $table->timestamps();
         });
